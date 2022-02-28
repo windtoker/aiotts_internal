@@ -1,7 +1,350 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+    <title>Audio Samples from "AIOtts : All-in-One pitch-adjustable end-to-end TTS without external aligner"</title>
+    <style>
+      div {
+        margin-bottom: 64px;
+      }
+      .first-col {
+        padding-right: 40px;
+        white-space: nowrap;
+      }
+      .text {
+        font-style: italic;
+        color: #666666;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <header>
+        <h1>Audio Samples from "AIOtts : All-in-One pitch-adjustable end-to-end TTS without external aligner"</h1>
+      </header>
+    </article>
+
+    <div>
+      <b>Abstract:</b> 
+      Several recent end-to-end text-to-speech (TTS) models enabling single-stage training and parallel sampling have been proposed, but their sample quality does not match that of two-stage TTS systems. In this work, we present a parallel end-to-end TTS method that generates more natural sounding audio than current two-stage models. Our method adopts variational inference augmented with normalizing flows and an adversarial training process, which improves the expressive power of generative modeling. We also propose a stochastic duration predictor to synthesize speech with diverse rhythms from input text. With the uncertainty modeling over latent variables and the stochastic duration predictor, our method expresses the natural one-to-many relationship in which a text input can be spoken in multiple ways with different pitches and rhythms. A subjective human evaluation (mean opinion score, or MOS) on the LJ Speech, a single speaker dataset, shows that our method outperforms the best publicly available TTS systems and achieves a MOS comparable to ground truth.
+      <!-- <div>
+        <audio controls preload="none"><source src="wavs/abs.wav"></audio>
+      </div> -->
+    </div>
+
+    <h3 id="toc_title">Contents</h3>
+    <div id="toc_container">
+    <ul>
+      <li><a href="#ss">Single Speaker (LJ Speech Dataset)</a></li>
+      <!-- <li><a href="#ms">Multi-Speaker (VCTK Dataset)</a></li>
+      <li><a href="#pa">Pitch adjustment</a></li>
+      <li><a href="#as">Ablation Study</a></li> -->
+    </ul>
+    </div>
+
+    <div>
+      <a name="ss"><h2>Single Speaker (LJ Speech Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td>
+            <h4>Text</h4>
+          </td>
+          <td class="text">
+            Mrs. De Mohrenschildt thought that Oswald,
+          </td>
+          <td class="text">
+            The Secret Service believed that it was very doubtful that any President would ride regularly in a vehicle with a fixed top, even though transparent.
+          </td>
+          <td class="text">
+            Between the hours of eight and nine p.m. they were occupied with the children in the bedrooms located at the extreme east end of the house.
+          </td>
+          <td class="text">
+            The prisoner had nothing to deal with but wooden panels, and by dint of cutting and chopping he got both the lower panels out.
+          </td>
+          <td class="text">
+            Under these circumstances, unnatural as they are, with proper management, the bean will thrust forth its radicle and its plumule;
+          </td>
+          <td class="text">
+            Oswald demonstrated his thinking in connection with his return to the United States by preparing two sets of identical questions of the type which he might have thought
+          </td>
+          <td class="text">
+            it is not possible to state with scientific certainty that a particular small group of fibers come from a certain piece of clothing
+          </td>
+          <td class="text">
+            Under these circumstances, unnatural as they are, with proper management, the bean will thrust forth its radicle and its plumule;
+          </td>
+          <td class="text">
+            has confidence in the dedicated Secret Service men who are ready to lay down their lives for him
+          </td>
+          <td class="text">
+            Since these agencies are already obliged constantly to evaluate the activities of such groups,
+          </td>
+        </tr>
+        <tr>
+          <td class="first-col">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/0.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/5.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/6.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/7.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/8.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/groudtruth/9.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">Fastpitch + HiFi-GAN</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/0.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/5.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/6.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/7.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/8.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/fastpitch+hifigan/9.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">Glowtts + HiFi-GAN</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/0.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/5.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/6.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/7.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/8.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/9.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">VITS (no sdp)</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/0.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/5.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/6.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/7.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/8.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/9.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">AIOtts</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/0.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/5.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/6.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/7.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/8.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/9.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- <div>
+      <a name="ms"><h2>Multi-Speaker (VCTK Dataset)</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td>
+            <h4>Text</h4>
+          </td>
+          <td class="text">
+            The teacher would have approved.
+          </td>
+          <td class="text">
+            The rainbow is a division of white light into many beautiful colors.
+          </td>
+          <td class="text">
+            There was great support all round the route.
+          </td>
+          <td class="text">
+            Brown is an interesting man, but he is not desperate.
+          </td>
+          <td class="text">
+            Military action is the only option we have on the table today.
+          </td>
+        </tr>
+        <tr>
+          <td class="first-col">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_01_gt.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_02_gt.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_03_gt.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_04_gt.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_05_gt.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">Tacotron 2 + HiFi-GAN</td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_01_th.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_02_th.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_03_th.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_04_th.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_05_th.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">Tacotron 2 + HiFi-GAN (fine-tuned)</td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_01_thf.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_02_thf.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_03_thf.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_04_thf.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_05_thf.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">Glow-TTS + HiFi-GAN</td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_01_gh.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_02_gh.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_03_gh.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_04_gh.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_05_gh.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">Glow-TTS + HiFi-GAN (fine-tuned)</td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_01_ghf.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_02_ghf.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_03_ghf.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_04_ghf.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_05_ghf.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">VITS</td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_01_vits.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_02_vits.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_03_vits.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_04_vits.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ms_05_vits.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <a name="pa"><h2>Pitch adjustment </h2></a>
+      <hr>
+      <table border=1>
+        <tbody>
+        <tr>
+          <th>From\To</th>
+          <th>VCTK 260</th>
+          <th>VCTK 287</th>
+          <th>VCTK 247</th>
+          <th>VCTK 330</th>
+          <th>VCTK 310</th>
+        </tr>
+        <tr>
+          <th>VCTK 260</th>
+          <td><audio controls preload="none"><source src="wavs/vc_01_01.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_01_02.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_01_03.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_01_04.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_01_05.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>VCTK 287</th>
+          <td><audio controls preload="none"><source src="wavs/vc_02_01.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_02_02.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_02_03.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_02_04.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_02_05.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>VCTK 247</th>
+          <td><audio controls preload="none"><source src="wavs/vc_03_01.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_03_02.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_03_03.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_03_04.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_03_05.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>VCTK 330</th>
+          <td><audio controls preload="none"><source src="wavs/vc_04_01.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_04_02.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_04_03.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_04_04.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_04_05.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>VCTK 310</th>
+          <td><audio controls preload="none"><source src="wavs/vc_05_01.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_05_02.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_05_03.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_05_04.wav"></audio></td>
+          <td><audio controls preload="none"><source src="wavs/vc_05_05.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <a name="as"><h2>Ablation Study</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td>
+            <h4>Text</h4>
+          </td>
+          <td class="text">
+            that not more than one bottle of wine or one quart of beer could be issued at one time. No account was taken of the amount of liquors admitted in one day,
+          </td>
+          <td class="text">
+            The prisoner had nothing to deal with but wooden panels, and by dint of cutting and chopping he got both the lower panels out.
+          </td>
+          <td class="text">
+            have now come into general use and are obviously a great improvement on the ordinary "modern style" in use in England, which is in fact the Bodoni type
+          </td>
+          <td class="text">
+            At two:thirty-eight p.m., Eastern Standard Time, Lyndon Baines Johnson took the oath of office as the thirty-sixth President of the United States.
+          </td>
+          <td class="text">
+            The boy declared he saw no one, and accordingly passed through without paying the toll of a penny.
+          </td>
+        </tr>
+        <tr>
+          <td class="first-col">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="wavs/ss_01_gt.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ss_02_gt.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ss_03_gt.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ss_04_gt.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/ss_05_gt.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">VITS (300k training)</td>
+          <td><audio controls="" preload="none"><source src="wavs/as_01_vits.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_02_vits.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_03_vits.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_04_vits.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_05_vits.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">w/o Normalizing Flow (300k training)</td>
+          <td><audio controls="" preload="none"><source src="wavs/as_01_noflow.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_02_noflow.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_03_noflow.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_04_noflow.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_05_noflow.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">w Mel-Spectrogram (300k training)</td>
+          <td><audio controls="" preload="none"><source src="wavs/as_01_melpost.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_02_melpost.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_03_melpost.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_04_melpost.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/as_05_melpost.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+  </body>
 </html>
