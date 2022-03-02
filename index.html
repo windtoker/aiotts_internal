@@ -25,11 +25,10 @@
     </article>
 
     <div>
-      <b>Abstract:</b> 
-      Several recent end-to-end text-to-speech (TTS) models enabling single-stage training and parallel sampling have been proposed, but their sample quality does not match that of two-stage TTS systems. In this work, we present a parallel end-to-end TTS method that generates more natural sounding audio than current two-stage models. Our method adopts variational inference augmented with normalizing flows and an adversarial training process, which improves the expressive power of generative modeling. We also propose a stochastic duration predictor to synthesize speech with diverse rhythms from input text. With the uncertainty modeling over latent variables and the stochastic duration predictor, our method expresses the natural one-to-many relationship in which a text input can be spoken in multiple ways with different pitches and rhythms. A subjective human evaluation (mean opinion score, or MOS) on the LJ Speech, a single speaker dataset, shows that our method outperforms the best publicly available TTS systems and achieves a MOS comparable to ground truth.
-      <!-- <div>
-        <audio controls preload="none"><source src="wavs/abs.wav"></audio>
-      </div> -->
+      <h3>Abstract:</h3> 
+      <p>
+      "Issues existing in text-to-speech field have been resolved with several ideas including end-to-end architecture, pitch adjustable implementation and external alignment estiamtor for non-autoregressive models. However, there exists no solution tackling all issues in one solution at once. We propose pitch-adjustable end-to-end TTS without external aligner that generates naturally sounding speeches with simpler training steps by learning all at once. Duration prediction, pitch estimation and wave generation tasks are done at once to eliminate the inefficiency in the training and the inference steps. Compared to the state-of-the-art VITS in the inference stage, normalizing flow modules have been removed which accelerates the speed of audio generation. While VITS focuses on generating audios stochastically by sampling random latent variable in latent space, in AIOtts we can input the pitch transform factor to adjust the pitch level of each token we input as text. Thus we can manually cooridinate the prosody of the generated audios by adjusting the pitch factor in the inference stage."
+      </p>
     </div>
 
     <h3 id="toc_title">Contents</h3>
@@ -44,6 +43,13 @@
 
     <div>
       <a name="ss"><h2>Single Speaker (LJ Speech Dataset)</h2></a>
+      <hr>
+      <div>
+        <li>AIOtts ljs_v1 : base model</li>
+        <li>AIOtts ljs_v5 : deepen pitch predictor module from v1</li>
+        <li>AIOtts ljs_v6 : use_stop_gradient_on_pitch_predictor to false from v5</li>
+        <li>AIOtts ljs_v12 : bridge loss l2 -> l1 from v6</li>
+      </div>
       <hr>
       <table>
         <tbody>
@@ -101,12 +107,44 @@
           <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/5.wav"></audio></td>
         </tr>
         <tr>
-          <td class="first-col">AIOtts</td>
+          <td class="first-col">AIOtts v1 500ep</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">AIOtts v1 1000ep</td>
           <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/1.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/2.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/3.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/4.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">AIOtts v5 500ep</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">AIOtts v6 500ep</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/5.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">AIOtts v12 400ep</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/2.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/3.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/5.wav"></audio></td>
         </tr>
         </tbody>
       </table>
