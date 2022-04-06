@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Audio Samples from "AIOtts : All-in-One pitch-adjustable end-to-end TTS without external aligner"</title>
+    <title>Audio Samples from "TriniTTS: Pitch-controllable End-to-end TTS without External Aligner"</title>
     <style>
       div {
         margin-bottom: 64px;
@@ -20,39 +20,31 @@
   <body>
     <article>
       <header>
-        <h1>Audio Samples from "AIOtts : All-in-One pitch-adjustable end-to-end TTS without external aligner"</h1>
+        <h1>Audio Samples from "TriniTTS: Pitch-controllable End-to-end TTS without External Aligner"</h1>
       </header>
     </article>
 
     <div>
       <h3>Abstract:</h3> 
       <p>
-      "Issues existing in text-to-speech field have been resolved with several ideas including end-to-end architecture, pitch adjustable implementation and external alignment estiamtor for non-autoregressive models. However, there exists no solution tackling all issues in one solution at once. We propose pitch-adjustable end-to-end TTS without external aligner that generates naturally sounding speeches with simpler training steps by learning all at once. Duration prediction, pitch estimation and wave generation tasks are done at once to eliminate the inefficiency in the training and the inference steps. Compared to the state-of-the-art VITS in the inference stage, normalizing flow modules have been removed which accelerates the speed of audio generation. While VITS focuses on generating audios stochastically by sampling random latent variable in latent space, in AIOtts we can input the pitch transform factor to adjust the pitch level of each token we input as text. Thus we can manually cooridinate the prosody of the generated audios by adjusting the pitch factor in the inference stage."
+      "Three research directions that have recently advanced the text-to-speech (TTS) field are end-to-end architecture, prosody control modeling, and on-the-fly duration alignment of non-auto-regressive models. However, these three agendas have yet to be tackled at once in a single solution. Current studies are limited either by a lack of control over prosody modeling or by the inefficient training inherent in building a two-stage TTS pipeline. We propose TriniTTS, a pitch-controllable end-to-end TTS without an external aligner that generates natural speech by addressing the issues mentioned above at once. It eliminates the training inefficiency in the two-stage TTS pipeline by the end-to-end architecture. Moreover, it manages to learn the latent vector representing the data distribution of the speeches through performing tasks (alignment search, pitch estimation, waveform generation) simultaneously. Experimental results demonstrate that TriniTTS enables prosody modeling with user input parameters to generate deterministic speech, while synthesizing com- parable speech to the state-of-the-art VITS. Furthermore, eliminating normalizing flow modules used in VITS increases the inference speed by 28.84% in CPU environment and by 29.16% in GPU environment."
       </p>
     </div>
 
     <h3 id="toc_title">Contents</h3>
     <div id="toc_container">
     <ul>
-      <li><a href="#ss">Single Speaker (LJ Speech Dataset)</a></li>
-      <li><a href="#ps">Pitch shift (LJ Speech Dataset)</a></li>
-      <li><a href="#pa">Pitch amplify (LJ Speech Dataset)</a></li>
-      <!-- <li><a href="#ms">Multi-Speaker (VCTK Dataset)</a></li>
-      <li><a href="#pa">Pitch adjustment</a></li>
-      <li><a href="#as">Ablation Study</a></li> -->
+      <li><a href="#ss">Single Speaker (LJSpeech Dataset)</a></li>
+      <li><a href="#sps">Pitch shift (LJSpeech Dataset)</a></li>
+      <li><a href="#spa">Pitch amplify (LJSpeech Dataset)</a></li>
+      <li><a href="#ms">Multi-Speaker (VCTK Dataset)</a></li>
+      <li><a href="#mps">Pitch shift (VCTK Dataset)</a></li>
+      <li><a href="#mpa">Pitch amplify (VCTK Dataset)</a></li>
     </ul>
     </div>
 
     <div>
-      <a name="ss"><h2>Single Speaker (LJ Speech Dataset)</h2></a>
-      <hr>
-      <div>
-        <li>AIOtts ljs_v1 : base model</li>
-        <li>AIOtts ljs_v5 : deepen pitch predictor module from v1</li>
-        <li>AIOtts ljs_v6 : use_stop_gradient_on_pitch_predictor to false from v5</li>
-        <li>AIOtts ljs_v12 : bridge loss l2 -> l1 from v6</li>
-      </div>
-      <hr>
+      <a name="ss"><h2>Single Speaker (LJSpeech Dataset)</h2></a>
       <table>
         <tbody>
         <tr>
@@ -95,74 +87,25 @@
           <td><audio controls="" preload="none"><source src="wavs/single/glowtts+hifigan/normal/7.wav"></audio></td>
         </tr>
         <tr>
-          <td class="first-col">VITS (no sdp)</td>
+          <td class="first-col">VITS</td>
           <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/normal/1.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/normal/4.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/normal/5.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/single/vits/ljs_nosdp/normal/7.wav"></audio></td>
         </tr>
         <tr>
-          <td class="first-col">AIOtts v1 500ep</td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/normal/1.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/normal/4.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/normal/5.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_500/normal/7.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AIOtts v1 1000ep</td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/normal/1.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/normal/4.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/normal/5.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v1_1000/normal/7.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AIOtts v5 500ep</td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/normal/1.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/normal/4.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/normal/5.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v5_500/normal/7.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AIOtts v6 500ep</td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/normal/1.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/normal/4.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/normal/5.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v6_500/normal/7.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AIOtts v12 400ep</td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/normal/1.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/normal/4.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/normal/5.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/normal/7.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AIOtts ljs8_v1 1500ep</td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v1_1500/normal/1.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v1_1500/normal/4.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v1_1500/normal/5.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v1_1500/normal/7.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AIOtts ljs8_v2 1500ep</td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v2_1500/normal/1.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v2_1500/normal/4.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v2_1500/normal/5.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v2_1500/normal/7.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AIOtts ljs8_v6 1500ep</td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v6_1500/normal/1.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v6_1500/normal/4.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v6_1500/normal/5.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v6_1500/normal/7.wav"></audio></td>
+          <td class="first-col">TriniTTS</td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v2_2000/normal/1.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v2_2000/normal/4.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v2_2000/normal/5.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/single/aiotts/ljs8_v2_2000/normal/7.wav"></audio></td>
         </tr>
         </tbody>
       </table>
     </div>
 
     <div>
-        <a name="ps"><h2>Pitch shift </h2></a>
+        <a name="sps"><h2>Pitch shift </h2></a>
         <hr> 
         <h2>The Secret Service believed that it was very doubtful that any President would ride regularly in a vehicle with a fixed top, even though transparent.</h2>
         <table border=1>
@@ -170,7 +113,7 @@
           <tr>
             <th>From\To</th>
             <th>Fastpitch+Hifi-gan</th>
-            <th>AIOtts</th>
+            <th>TriniTTS</th>
           </tr>
           <tr>
             <th>Pitch shift = -40 (Hz)</th>
@@ -200,34 +143,24 @@
           <tr>
             <th>From\To</th>
             <th>Fastpitch+Hifi-gan</th>
-            <th>AIOtts</th>
+            <th>TriniTTS</th>
           </tr>
           <tr>
             <th>Pitch amplify = 2</th>
             <td><audio controls preload="none"><source src="wavs/single/fastpitch+hifigan/pitch_amplify_2/1.wav"></audio></td>
-            <td><audio controls preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/pitch_amplify_2/1.wav"></audio></td>
-          </tr>
-          <tr>
-            <th>Pitch amplify = 1.5</th>
-            <td><audio controls preload="none"><source src="wavs/single/fastpitch+hifigan/pitch_amplify_1_5/1.wav"></audio></td>
-            <td><audio controls preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/pitch_amplify_1_5/1.wav"></audio></td>
+            <td><audio controls preload="none"><source src="wavs/single/aiotts/ljs8_v2_2000/pitch_amplify_2/1.wav"></audio></td>
           </tr>
           <tr>
             <th>Normal</th>
             <td><audio controls preload="none"><source src="wavs/single/fastpitch+hifigan/normal/1.wav"></audio></td>
-            <td><audio controls preload="none"><source src="wavs/single/aiotts/ljs7_v12_400/normal/1.wav"></audio></td>
+            <td><audio controls preload="none"><source src="wavs/single/aiotts/ljs8_v2_2000/normal/1.wav"></audio></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-  <div>
+  <!-- <div>
       <a name="ms"><h2>Multi Speaker (VCTK Dataset)</h2></a>
-      <hr>
-      <div>
-        <li>AIOtts vctk_v7 epoch 300, batch_size 16 n_gpu 2 grad_accum 1 : base model</li>
-      </div>
-      <hr>
       <h2>The Secret Service believed that it was very doubtful that any President would ride regularly in a vehicle with a fixed top, even though transparent.</h2>
       <table>
         <tbody>
@@ -240,7 +173,7 @@
             Ground truth
           </td>
           <td class="text">
-            AIOTTS vctk_v7
+            TriniTTS
           </td>
         </tr>
         <tr>
@@ -283,7 +216,7 @@
             Ground truth
           </td>
           <td class="text">
-            AIOTTS vctk_v7
+            TriniTTS
           </td>
         </tr>
         <tr>
@@ -313,7 +246,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div> -->
 
     <!-- <div>
       <a name="ms"><h2>Multi-Speaker (VCTK Dataset)</h2></a>
