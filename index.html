@@ -14,6 +14,23 @@
         font-style: italic;
         color: #666666;
       }
+
+      /* .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+      } */
+
+      /* Create two equal columns that sits next to each other */
+      /* .column {
+        flex: 50%;
+        padding: 0 4px;
+      } */
+
+      /* .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+      } */
     </style>
   </head>
 
@@ -31,12 +48,19 @@
       </p>
     </div>
 
+    <!-- <div class="row">
+      <h3>Diagram</h3> 
+      <div class="column">
+        <img src="images/TriniTTS_train.jpg" alt="training diagram">
+        <div class="caption">Training diagram</div>
+        <img src="images/TriniTTS_infer.jpg" alt="inference diagram">
+        <div class="caption">Inference diagram</div>
+      </div>
+    </div> -->
+
     <div>
       <h3>Diagram</h3> 
-      <img src="images/TriniTTS_train.jpg" alt="training diagram">
-      <div class="caption">Training diagram</div>
-      <img src="images/TriniTTS_infer.jpg" alt="inference diagram">
-      <div class="caption">Inference diagram</div>
+      <img src="images/diagram.png" alt="diagram">
     </div>
 
     <h3 id="toc_title">Contents</h3>
@@ -208,10 +232,10 @@
         </tr>
         <tr>
           <td class="first-col">VITS ep.500</td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/vits/pretrained/normal/p361_63.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/vits/pretrained/normal/p360_99.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/vits/pretrained/normal/p345_20.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/vits/pretrained/normal/p341_41.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/vits/self/normal/p361_63.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/vits/self/normal/p360_99.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/vits/self/normal/p345_20.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/vits/self/normal/p341_41.wav"></audio></td>
         </tr>
         <tr>
           <td class="first-col">VITS pretrained (800K steps) </td>
@@ -222,17 +246,17 @@
         </tr>
         <tr>
           <td class="first-col">TriniTTS ep.50</td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p361_63.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p360_99.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p345_20.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p341_41.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_50/normal/p361_63.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_50/normal/p360_99.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_50/normal/p345_20.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_50/normal/p341_41.wav"></audio></td>
         </tr>
         <tr>
           <td class="first-col">TriniTTS ep.500</td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p361_63.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p360_99.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p345_20.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p341_41.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_500/normal/p361_63.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_500/normal/p360_99.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_500/normal/p345_20.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_500/normal/p341_41.wav"></audio></td>
         </tr>
         <tr>
           <td class="first-col">TriniTTS ep.1000</td>
