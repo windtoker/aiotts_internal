@@ -354,6 +354,37 @@
           </tr>
         </tbody>
       </table>
+
+      <hr>
+      <h3>I was left-handed, but it was just a matter of practice.</h3>
+      <table border=1>
+        <tbody>
+          <tr>
+            <th>From\To</th>
+            <th>Ground truth</th>
+            <th>Fastpitch+Hifi-gan</th>
+            <th>TriniTTS</th>
+          </tr>
+          <tr>
+            <th>Pitch shift = -40 (Hz)</th>
+            <td></td>
+            <td><audio controls preload="none"><source src="wavs/multi/fastpitch+hifigan/pitch_shift_-40/p341_35.wav"></audio></td>
+            <td><audio controls preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/pitch_shift_-40/p341_35.wav"></audio></td>
+          </tr>
+          <tr>
+            <th>Pitch shift = 0 (Hz)</th>
+            <td><audio controls preload="none"><source src="wavs/multi/groundtruth/p341_35.wav"></audio></td>
+            <td><audio controls preload="none"><source src="wavs/multi/fastpitch+hifigan/normal/p341_35.wav"></audio></td>
+            <td><audio controls preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/normal/p341_35.wav"></audio></td>
+          </tr>
+          <tr>
+            <th>Pitch shift = +40 (Hz)</th>
+            <td></td>
+            <td><audio controls preload="none"><source src="wavs/multi/fastpitch+hifigan/pitch_shift_+40/p341_35.wav"></audio></td>
+            <td><audio controls preload="none"><source src="wavs/multi/aiotts/vctk11_v2_2_1000/pitch_shift_+40/p341_35.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
   </body>
